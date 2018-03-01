@@ -1,14 +1,14 @@
 // require all our ependencies
 const express = require('express')
-//require hbs
+// require hbs
 const hbs = require('hbs')
 // create and set up our express app
 const app = express()
 
 //
-app.set('view engine', 'hbs') 
+app.set('view engine', 'hbs')
 
-//define a route
+// define a route
 app.get('/', (req, res) => {
   res.render('index')
 })
