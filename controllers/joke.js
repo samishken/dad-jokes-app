@@ -14,20 +14,21 @@ router.post('/', (req, res) => {
   })
 })
 // get new view for a new joke
-router.get('/new')
-
-router.get('/jokes/new', (req, res) => {
-  res.send('hello from the other side')
+router.get('/new', (req, res) => {
+    res.render('joke/new')
 })
 
 // get a joke by it's id: '/:id'
 router.get('/:id', (req, res) => {
-  Joke.findOne({_id: req.params.id }).then(joke => {
+  Joke.findOne({ _id: req.params.id }).then(joke => {
     res.render('joke/show', joke)
   })
 })
-// update a joke by it's id: '/:id'
 
+// update a joke by it's id: '/:id'
 // delete a joke by it's id: '/:id'
+
+
+
 // export our router
 module.exports = router
