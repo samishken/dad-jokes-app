@@ -5,7 +5,8 @@ const hbs = require('hbs')
 // create and set up our express app
 const app = express()
 
-ap
+//
+app.set('view engine', 'hbs') 
 
 //define a route
 app.get('/', (req, res) => {
