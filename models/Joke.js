@@ -1,8 +1,7 @@
 // Import DB connection
 const mongoose = require('../db/connection')
-// defining the schema
-// schema the structure of our data
-// to be used to create our model
+
+// Create a new schema
 const JokeSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -12,11 +11,15 @@ const JokeSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now()
+  },
+  updatedAt: {
+    type: Date,
+    default: Date.now()
   }
 })
 
-// 1st line create mongoose model by passing in the name
-// of the model and the schema for the model
+// Giving mongoose the schema to build the model
 const Joke = mongoose.model('Joke', JokeSchema)
+
 // exporting the Joke model
 module.exports = Joke
